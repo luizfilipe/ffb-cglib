@@ -11,6 +11,8 @@
 *.so
 *.so.*
 *.dylib
+ffb-cglib.xcodeproj/project.xcworkspace/xcshareddata/
+ffb-cglib.xcodeproj/project.xcworkspace/xcuserdata/luizfilipe.xcuserdatad/UserInterfaceState.xcuserstate
 
 # Executables
 *.exe
