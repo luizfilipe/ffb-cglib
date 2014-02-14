@@ -59,12 +59,4 @@ void clamp(GLfloat* var, GLfloat min, GLfloat max)
         *var = min;
 };
 
-//TODO: improve the function keeping the behavior
-char* concat(char* str1, char* str2) {
-	char* result = (char*) malloc(256);
-	strcpy(result, str1);
-	strcat(result, str2);
-	return result;
-}
-
 #endif // UTIL_H
