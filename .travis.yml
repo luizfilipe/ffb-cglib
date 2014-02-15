@@ -2,6 +2,4 @@ language: c
 compiler:
   - gcc
   - clang
-# Change this to your needs
-
 script: make 
