@@ -4,6 +4,8 @@
  *   LuÌs Hiluy   *
  * Mateus Gadelha *
  *****************/
+#include <glut/glut.h>
+#include <GLKit/GLKMath.h>
 
 #include "../../src/ffb_cglib.h"
 
