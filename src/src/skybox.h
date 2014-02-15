@@ -14,26 +14,18 @@ typedef struct
     Camera* camera;
 }SkyBox;
 
-// TODO See issue #8
-SkyBox* newSkyBox(Camera* cam,
-		char* front,
-		char* back,
-		char* left,
-		char* right,
-		char* bottom,
-		char* top) {
-
+SkyBox* newSkyBox(Camera* cam) {
     SkyBox* sk = (SkyBox*) malloc(sizeof(SkyBox));
     
     sk->camera = cam;
-    sk->front = newObject3d(newModel3d(newMeshPlane(loadTexture(front)), newMaterial())); //0x, 0y, 500z
-    sk->back = newObject3d(newModel3d(newMeshPlane(loadTexture(back)), newMaterial()));  //0x, 0y, -500z
-    sk->left = newObject3d(newModel3d(newMeshPlane(loadTexture(left)), newMaterial()));  //rotaciona 90% em y, -500x
-    sk->right = newObject3d(newModel3d(newMeshPlane(loadTexture(right)), newMaterial())); //rotaciona 90% em y, 500x
-    sk->top = newObject3d(newModel3d(newMeshPlane(loadTexture(top)), newMaterial()));    //rotaciona 90% em x, 500y
-    sk->bottom = newObject3d(newModel3d(newMeshPlane(loadTexture(bottom)), newMaterial()));//rotaciona 90% em x, -500y
+    sk->front = newObject3d(newModel3d(newMeshPlane(loadTexture("front.bmp")), newMaterial())); //0x, 0y, 500z
+    sk->back = newObject3d(newModel3d(newMeshPlane(loadTexture("back.bmp")), newMaterial()));  //0x, 0y, -500z
+    sk->left = newObject3d(newModel3d(newMeshPlane(loadTexture("left.bmp")), newMaterial()));  //rotaciona 90% em y, -500x
+    sk->right = newObject3d(newModel3d(newMeshPlane(loadTexture("right.bmp")), newMaterial())); //rotaciona 90% em y, 500x
+    sk->top = newObject3d(newModel3d(newMeshPlane(loadTexture("top.bmp")), newMaterial()));    //rotaciona 90% em x, 500y
+    sk->bottom = newObject3d(newModel3d(newMeshPlane(loadTexture("bottom.bmp")), newMaterial()));//rotaciona 90% em x, -500y
 
-    // SCALE ALL TO 1000
+    //ESCALONA TODOS PARA 1000
     sk->front->scale = initVector3df(1000, 1000, 1);
     sk->back->scale = initVector3df(1000, 1000, 1);
     sk->left->scale = initVector3df(1, 1000, 1000);
@@ -41,7 +33,7 @@ SkyBox* newSkyBox(Camera* cam,
     sk->top->scale = initVector3df(1000, 1, 1000);
     sk->bottom->scale = initVector3df(1000, 1, 1000);
 
-    // Execute rotations
+    //Executa as operações de rotação
     sk->left->rotation.Y = 270;
     sk->right->rotation.Y = 90;
     sk->top->rotation.X = -90;
