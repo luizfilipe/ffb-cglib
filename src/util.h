@@ -40,10 +40,14 @@ void readstr(FILE *f, char *string)
 };
 
 
-GLfloat degToRad(const GLfloat degrees)
+GLfloat toRadians(const GLfloat degrees)
 {
     return degrees * (float)PI / 180;
 };
+
+GLfloat toDegress(const GLfloat radians) {
+	return radians * 180 / (float)PI;
+}
 
 void drop(void* pointer)
 {
@@ -53,17 +57,19 @@ void drop(void* pointer)
 
 void clamp(GLfloat* var, GLfloat min, GLfloat max)
 {
-    if(*var > max)
+    if (*var > max) {
         *var = max;
-    else if(*var < min)
+    } else if (*var < min) {
         *var = min;
+    }
 };
 
-//TODO: improve the function keeping the behavior
 char* concat(char* str1, char* str2) {
-	char* result = (char*) malloc(256);
-	strcpy(result, str1);
-	strcat(result, str2);
+	int i, j;
+	char* result = (char*)calloc(strlen(str1) + strlen(str2), sizeof(char));
+	for (i = 0; str1[i]; result[i] = str1[i], i++);
+	for (j = i; str2[j-i]; result[j] = str2[j-i], j++);
+	result[j] = '\0';
 	return result;
 }
 

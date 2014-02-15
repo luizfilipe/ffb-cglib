@@ -45,14 +45,14 @@ void drawCamera(const Camera* camera)
 //extras
 void moveFoward(Camera* camera, const GLfloat speed)
 {
-    camera->translation.X -= cos(degToRad(camera->rotation.Y + 90)) * speed;
-    camera->translation.Z += sin(degToRad(camera->rotation.Y + 90)) * speed;
+    camera->translation.X -= cos(toRadians(camera->rotation.Y + 90)) * speed;
+    camera->translation.Z += sin(toRadians(camera->rotation.Y + 90)) * speed;
 };
 
 void moveBackward(Camera* camera, const GLfloat speed)
 {
-    camera->translation.X += cos(degToRad(camera->rotation.Y + 90)) * speed;
-    camera->translation.Z -= sin(degToRad(camera->rotation.Y + 90)) * speed;
+    camera->translation.X += cos(toRadians(camera->rotation.Y + 90)) * speed;
+    camera->translation.Z -= sin(toRadians(camera->rotation.Y + 90)) * speed;
 };
 
 
@@ -60,9 +60,9 @@ void noseUp(Camera* camera, const GLfloat speed)
 {
     Vector3df rot = camera->rotation;
      
-    camera->rotation.X += sin( degToRad(rot.Y) + 90 ) * speed;
+    camera->rotation.X += sin( toRadians(rot.Y) + 90 ) * speed;
     //camera->rotation.Y += 0;
-    camera->rotation.Z += cos( degToRad(rot.Y) + 90 ) * speed;
+    camera->rotation.Z += cos( toRadians(rot.Y) + 90 ) * speed;
 };
 /*
 void noseDown(Camera* camera, const GLfloat speed)

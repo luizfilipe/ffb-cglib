@@ -54,6 +54,7 @@ void initialize()
   car = newCar(cam);
 
   Model3d* plane = newModel3d(newMeshPlane(loadTexture(concat(path, "grass.bmp"))), newMaterial());
+
   ground = newObject3d(plane);
   ground->rotation.X = 90;
   ground->scale = initVector3df(10000, 1, 10000);
