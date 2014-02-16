@@ -1,4 +1,6 @@
 language: c
+install:
+  - yum install freeglut-devel
 compiler:
   - gcc
 script: make 
