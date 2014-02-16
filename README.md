@@ -1,6 +1,6 @@
 #ffb-cglib
 
-A 3D Game Engine built in OpenGL.
+A 3D graphics library built in OpenGL.
 `ffb-cglib` was developed by four students as homework of Computer Grafics class
 in the Computer Science graduation at Brazilian College.
 Acknowledgements to:
