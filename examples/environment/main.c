@@ -8,6 +8,8 @@
 #include <glut/glut.h>
 #include <GLKit/GLKMath.h>
 #elif
+#include <GL/gl.h>
+#include <GL/glu.h>
 #include <GL/glut.h>
 #endif
 
