@@ -33,3 +33,4 @@ you have to follow the guidelines that are shown [here|TODO](https://github.com/
 All code is under [MIT](https://github.com/luizfilipe/ffb-cglib/blob/master/LICENSE) License
 
 
+![](https://travis-ci.org/luizfilipe/ffb-cglib.png)
