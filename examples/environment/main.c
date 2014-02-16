@@ -4,8 +4,12 @@
  *   LuÌs Hiluy   *
  * Mateus Gadelha *
  *****************/
+#if defined(__APPLE__) || defined(__MACOSX__)
 #include <glut/glut.h>
 #include <GLKit/GLKMath.h>
+#elif
+#include <GL/glut.h>
+#endif
 
 #include "../../src/ffb_cglib.h"
 
