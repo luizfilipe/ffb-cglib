@@ -3,6 +3,7 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get update 
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   - sudo apt-get install build-essential
   - sudo apt-get install freeglut3-dev
 script: make 

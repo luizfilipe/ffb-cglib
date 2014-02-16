@@ -10,8 +10,8 @@ LFLAGS  = $(LIBPATH) $(LIBS)
 
 # Main targets
 all: main.o
-	$(CC) -o $(PROJECT_PATH) main.o $(LFLAGS)
+	$(CC) -std=c11 -o $(PROJECT_PATH) main.o $(LFLAGS)
 
 # Source targets
 main.o: $(EXAMPLE_ENVIRONMENT)
-	$(CC) -c -std=iso9899:2011 -pedantic $(EXAMPLE_ENVIRONMENT) $(CFLAGS)
+	$(CC) -c -pedantic $(EXAMPLE_ENVIRONMENT) $(CFLAGS)
