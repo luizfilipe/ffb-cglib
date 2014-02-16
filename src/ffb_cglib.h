@@ -23,4 +23,4 @@
 #include "skybox.h"
 #include "circle.h"
 
-#endif // FFB_CGLIB_H
+#endif

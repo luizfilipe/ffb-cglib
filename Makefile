@@ -14,4 +14,4 @@ all: main.o
 
 # Source targets
 main.o: $(EXAMPLE_ENVIRONMENT)
-	$(CC) -c -pedantic $(EXAMPLE_ENVIRONMENT) $(CFLAGS)
+	$(CC) -c -std=c11 -pedantic $(EXAMPLE_ENVIRONMENT) $(CFLAGS)
