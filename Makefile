@@ -4,7 +4,7 @@ PROJECT_PATH = examples/environment/main
 EXAMPLE_ENVIRONMENT = examples/environment/main.c
 INCPATH = -I$(MESA)/include
 LIBPATH = -L$(MESA)/lib
-LIBS        = -lglut -lGLU -lGL -lm
+LIBS = -lglut -lGLU -lGL -lm
 CFLAGS  = $(INCPATH) -g
 LFLAGS  = $(LIBPATH) $(LIBS)
 
