@@ -7,7 +7,7 @@
 #if defined(__APPLE__) || defined(__MACOSX__)
 #include <glut/glut.h>
 #include <GLKit/GLKMath.h>
-#elif
+#else
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
