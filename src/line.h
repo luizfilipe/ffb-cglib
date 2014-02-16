@@ -18,7 +18,7 @@ Line2di initLine2di(const Point2di start, const Point2di end)
     line.Color = initColorf(1,1,1,1);
 
     return line;
-};
+}
 
 void drawLineDDA(const Line2di* line)
 {
@@ -53,7 +53,7 @@ void drawLineDDA(const Line2di* line)
     }
     
     glEnd();
-};
+}
 
 void drawLineBreseham(const Line2di* line)
 {
@@ -106,7 +106,7 @@ void drawLineBreseham(const Line2di* line)
     }
     
     glBegin(GL_POINTS);
-};
+}
 
 void drawLineStrip(const Line2di* line)
 {
@@ -118,6 +118,6 @@ void drawLineStrip(const Line2di* line)
     glFlush();
 
     glEnd();
-};
+}
 
 #endif // LINE_H

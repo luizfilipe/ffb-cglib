@@ -15,12 +15,12 @@ Point2di initPoint2di(const GLint x, const GLint y)
     p.X = x;
     p.Y = y;
     return p;
-};
+}
 
 Vector2di initVector2di(const GLint x, const GLint y)
 {
     return initPoint2di(x, y);
-};
+}
 
 typedef struct
 {
@@ -34,12 +34,12 @@ Point2df initPoint2df(const GLfloat x, const GLfloat y)
     p.X = x;
     p.Y = y;
     return p;
-};
+}
 
 Vector2df initVector2df(const GLfloat x, const GLfloat y)
 {
     return initPoint2df(x, y);
-};
+}
 
 typedef struct
 {
@@ -88,16 +88,16 @@ Vector3df initVector3df(const GLfloat x, const GLfloat y, const GLfloat z)
 Vector3df addVector3df(const Vector3df v1, const Vector3df v2)
 {
     return initVector3df(v1.X + v2.X, v1.Y + v2.Y, v1.Z + v2.Z);
-};
+}
 
 Vector3df subtractVector3df(const Vector3df v1, const Vector3df v2)
 {
     return initVector3df(v1.X - v2.X, v1.Y - v2.Y, v1.Z - v2.Z); 
-};
+}
 
 GLfloat lengthVector3df(const Vector3df v)
 {
     return sqrt((v.X * v.X) + (v.Y * v.Y) + (v.Z * v.Z));
-};
+}
 
 #endif // POINT_H

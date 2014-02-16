@@ -22,7 +22,7 @@ Billboard initBillboard(const GLint type, Camera* camera, Texture* texture)
     billboard.object = object;
     
     return billboard;
-};
+}
 
 Billboard* newBillboard(const GLint type, Camera* camera, Texture* texture)
 {
@@ -30,7 +30,7 @@ Billboard* newBillboard(const GLint type, Camera* camera, Texture* texture)
     *billboard = initBillboard(type, camera, texture);
 
     return billboard;
-};
+}
 
 void drawBillboardPerpendicular(const Billboard* billboard)
 {   
@@ -38,12 +38,12 @@ void drawBillboardPerpendicular(const Billboard* billboard)
    billboard->object->rotation.Y = -billboard->camera->rotation.Y;
 //   billboard->object->rotation.Z = billboard->camera->rotation.Z;
    drawObject3d(billboard->object);
-};
+}
 
 void drawBillboardCylindrical(const Billboard* billboard)
 {
     
-};
+}
 
 void drawBillboard(const Billboard* billboard)
 {

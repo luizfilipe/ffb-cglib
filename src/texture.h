@@ -110,6 +110,6 @@ Texture* loadTexture(char* fileName)
     
     // we're done.
     return tex;
-};
+}
 
 #endif
