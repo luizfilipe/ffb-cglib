@@ -57,7 +57,7 @@ void drawBillboard(const Billboard* billboard)
             drawBillboardCylindrical(billboard);
             break;     
     }
-};
+}
 
 #endif
 

@@ -20,7 +20,7 @@ Colorf initColorf(const GLfloat red, const GLfloat green, const GLfloat blue, co
     color.A = alpha;
 
     return color;
-};
+}
 
 typedef struct
 {
