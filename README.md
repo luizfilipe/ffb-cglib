@@ -5,7 +5,7 @@ A 3D graphics library built in OpenGL.
 in the Computer Science graduation at Brazilian College.
 Acknowledgements to:
 
-Luiz Ricardo ([lrpsantiago](http://github.com/lrpsantigo))  
+Luiz Ricardo ([lrpsantiago](http://github.com/lrpsantiago))  
 Luiz Filipe ([luizfilipe](http://github.com/luizfilipe) or [epicleap](http://github.com/epicleap))  
 Luís Hiluy  
 Mateus Gadelha  
