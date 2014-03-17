@@ -24,7 +24,7 @@ Camera initCamera(const Point3df translation, const Vector3df rotation)
     cam.zFar = 100;
     
     return cam;
-};
+}
 
 Camera* newCamera(const Point3df translation, const Vector3df rotation)
 {
@@ -32,7 +32,7 @@ Camera* newCamera(const Point3df translation, const Vector3df rotation)
     *camera = initCamera(translation, rotation);
 
     return camera;
-};
+}
 
 void drawCamera(const Camera* camera)
 {
@@ -40,51 +40,51 @@ void drawCamera(const Camera* camera)
     glRotatef(180 - camera->rotation.Y, 0, 1, 0);
     glRotatef(-camera->rotation.Z, 0, 0, 1);
     glTranslatef(-camera->translation.X, -camera->translation.Y, -camera->translation.Z);
-};
+}
 
 //extras
 void moveFoward(Camera* camera, const GLfloat speed)
 {
-    camera->translation.X -= cos(degToRad(camera->rotation.Y + 90)) * speed;
-    camera->translation.Z += sin(degToRad(camera->rotation.Y + 90)) * speed;
-};
+    camera->translation.X -= cos(toRadians(camera->rotation.Y + 90)) * speed;
+    camera->translation.Z += sin(toRadians(camera->rotation.Y + 90)) * speed;
+}
 
 void moveBackward(Camera* camera, const GLfloat speed)
 {
-    camera->translation.X += cos(degToRad(camera->rotation.Y + 90)) * speed;
-    camera->translation.Z -= sin(degToRad(camera->rotation.Y + 90)) * speed;
-};
+    camera->translation.X += cos(toRadians(camera->rotation.Y + 90)) * speed;
+    camera->translation.Z -= sin(toRadians(camera->rotation.Y + 90)) * speed;
+}
 
 
 void noseUp(Camera* camera, const GLfloat speed)
 {
     Vector3df rot = camera->rotation;
      
-    camera->rotation.X += sin( degToRad(rot.Y) + 90 ) * speed;
+    camera->rotation.X += sin( toRadians(rot.Y) + 90 ) * speed;
     //camera->rotation.Y += 0;
-    camera->rotation.Z += cos( degToRad(rot.Y) + 90 ) * speed;
-};
+    camera->rotation.Z += cos( toRadians(rot.Y) + 90 ) * speed;
+}
 /*
 void noseDown(Camera* camera, const GLfloat speed)
 {
     camera->rotation.X += 0;
     camera->rotation.Y += 0;
     camera->rotation.Z += 0;  
-};
+}
 
 void rollRight(Camera* camera, const GLfloat speed)
 {
     camera->rotation.X += 0;
     camera->rotation.Y += 0;
     camera->rotation.Z += 0;  
-};
+}
 
 void rollLeft(Camera* camera, const GLfloat speed)
 {
     camera->rotation.X += 0;
     camera->rotation.Y += 0;
     camera->rotation.Z += 0;
-};
+}
 */
 
 #endif

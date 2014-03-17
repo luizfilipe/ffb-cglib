@@ -1,11 +1,11 @@
 #ffb-cglib
 
-A 3D Game Engine built in OpenGL.
+A 3D graphics library built in OpenGL.
 `ffb-cglib` was developed by four students as homework of Computer Grafics class
 in the Computer Science graduation at Brazilian College.
 Acknowledgements to:
 
-Luiz Ricardo ([lrpsantiago](http://github.com/lrpsantigo))  
+Luiz Ricardo ([lrpsantiago](http://github.com/lrpsantiago))  
 Luiz Filipe ([luizfilipe](http://github.com/luizfilipe) or [epicleap](http://github.com/epicleap))  
 Luís Hiluy  
 Mateus Gadelha  
@@ -33,3 +33,4 @@ you have to follow the guidelines that are shown [here|TODO](https://github.com/
 All code is under [MIT](https://github.com/luizfilipe/ffb-cglib/blob/master/LICENSE) License
 
 
+![](https://travis-ci.org/luizfilipe/ffb-cglib.png)

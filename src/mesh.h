@@ -37,7 +37,7 @@ Mesh* loadMesh(const char* meshFileName)
     fclose(filein);
     
     return m;
-};
+}
 
 Mesh* newMeshCube(Texture* texture)
 {
@@ -83,7 +83,7 @@ Mesh* newMeshCube(Texture* texture)
     m->vertexes[23] = initVertex( .5, -.5,  .5,  0,  0);
 
     return m;
-};
+}
 
 Mesh* newMeshPlane(Texture* texture)
 {
@@ -98,7 +98,7 @@ Mesh* newMeshPlane(Texture* texture)
     m->vertexes[3] = initVertex(-.5, -.5,  .5,  0,  0);
     
     return m;
-};
+}
 
 void drawMesh(const Mesh* mesh)
 {
@@ -128,6 +128,6 @@ void drawMesh(const Mesh* mesh)
     }
      
     glEnd();
-};
+}
 
 #endif

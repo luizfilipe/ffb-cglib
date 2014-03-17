@@ -1,15 +1,6 @@
 #ifndef FFB_CGLIB_H
 #define FFB_CGLIB_H
 
-#include <glut/glut.h>
-/*
- TODO: This library only exists in OS X 9 because glut is
- deprecated on OS X 9. Give one workarround to use the
- appropriate option.
-*/
-#include <GLKit/GLKMath.h>
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,4 +23,4 @@
 #include "skybox.h"
 #include "circle.h"
 
-#endif // FFB_CGLIB_H
+#endif

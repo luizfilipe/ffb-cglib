@@ -4,6 +4,14 @@
  *   LuÌs Hiluy   *
  * Mateus Gadelha *
  *****************/
+#if defined(__APPLE__) || defined(__MACOSX__)
+#include <glut/glut.h>
+#include <GLKit/GLKMath.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#endif
 
 #include "../../src/ffb_cglib.h"
 
@@ -54,6 +62,7 @@ void initialize()
   car = newCar(cam);
 
   Model3d* plane = newModel3d(newMeshPlane(loadTexture(concat(path, "grass.bmp"))), newMaterial());
+
   ground = newObject3d(plane);
   ground->rotation.X = 90;
   ground->scale = initVector3df(10000, 1, 10000);
@@ -94,7 +103,7 @@ void initialize()
   glLightfv(GL_LIGHT0, GL_DIFFUSE, LightDiffuse);
   glEnable(GL_LIGHT0);
   glEnable(GL_LIGHTING);
-};
+}
 
 void updateInput()
 {
@@ -133,7 +142,7 @@ void updateInput()
     cam->rotation.X -= .4f;
   }
   /**/
-};
+}
 
 void update()
 {
@@ -156,7 +165,7 @@ void update()
   //rock->translation.Z += .01f;
   
   rock->rotation = initVector3df(++rock->rotation.X, ++rock->rotation.Y, ++rock->rotation.Z);
-};
+}
 
 void draw()
 {
@@ -191,12 +200,12 @@ void draw()
   glPushMatrix();
   glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
   glPopMatrix();
-};
+}
 
 void destruction()
 {
   
-};
+}
 
 void reshapeFunction(GLsizei width, GLsizei height)
 {
@@ -212,7 +221,7 @@ void reshapeFunction(GLsizei width, GLsizei height)
   //GLKMatrix4makePerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 1400.0f);
   gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 1400.0f);
   glMatrixMode(GL_MODELVIEW);
-};
+}
 
 void displayFunction()
 {
@@ -222,34 +231,34 @@ void displayFunction()
   draw();
   
   glutSwapBuffers();
-};
+}
 
 void keyboardFunction(unsigned char key, int x, int y)
 {
   keys[key] = TRUE;
-};
+}
 
 void specialKeyboardFuntion(int key, int x, int y)
 {
   keys[key] = TRUE;
-};
+}
 
 void keyboardUpFunction(unsigned char key, int x, int y)
 {
   keys[key] = FALSE;
-};
+}
 
 void specialKeyboardUpFunction(int key, int x, int y)
 {
   keys[key] = FALSE;
-};
+}
 
 void timerFunction(int t)
 {
   update();
   glutPostRedisplay();
   glutTimerFunc(10, timerFunction, 0);
-};
+}
 
 void runApplication()
 {
@@ -268,7 +277,7 @@ void runApplication()
   initialize();
   glutMainLoop();
   destruction();
-};
+}
 
 int main(int argc, char * argv[])
 {
