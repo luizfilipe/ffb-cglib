@@ -4,8 +4,16 @@
  *   LuÌs Hiluy   *
  * Mateus Gadelha *
  *****************/
+#if defined(__APPLE__) || defined(__MACOSX__)
+#include <glut/glut.h>
+#include <GLKit/GLKMath.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#endif
 
-#include "ffb_cglib.h"
+#include "../../src/ffb_cglib.h"
 
 #define CLOUDS_AMOUNT 400
 #define BUILDINGS_AMOUNT 100
@@ -40,11 +48,21 @@ void initialize()
   glShadeModel(GL_SMOOTH);
   
   //cam = newCamera(initPoint3df(0,100,100), initPoint3df(0,180,0));
+
+  char* path = "examples/environment/assets/";
   cam = newCamera(initPoint3df(0,2,10), initPoint3df(0,180,0));
-  sk = newSkyBox(cam);
+  sk = newSkyBox(cam,
+		  concat(path, "front.bmp"),
+		  concat(path, "back.bmp"),
+		  concat(path, "left.bmp"),
+		  concat(path, "right.bmp"),
+		  concat(path, "bottom.bmp"),
+		  concat(path, "top.bmp"));
+
   car = newCar(cam);
-  
-  Model3d* plane = newModel3d(newMeshPlane(loadTexture("grass.bmp")), newMaterial());
+
+  Model3d* plane = newModel3d(newMeshPlane(loadTexture(concat(path, "grass.bmp"))), newMaterial());
+
   ground = newObject3d(plane);
   ground->rotation.X = 90;
   ground->scale = initVector3df(10000, 1, 10000);
@@ -57,7 +75,7 @@ void initialize()
   redefineTextureMap(&ground->model->mesh->vertexes[3], initPoint2df(0, 0));
   /**/
   
-  Model3d* cube = newModel3d(newMeshCube(loadTexture("box.bmp")), newMaterial() );
+  Model3d* cube = newModel3d(newMeshCube(loadTexture(concat(path, "box.bmp"))), newMaterial() );
   rock = newObject3d(cube);
   rock->translation.Y = 2;
   
@@ -66,14 +84,14 @@ void initialize()
   int i;
   for(i=0; i<CLOUDS_AMOUNT; i++)
   {
-    clouds[i] = newBillboard(PERPENDICULAR, cam, loadTexture("Cloud.bmp"));
+    clouds[i] = newBillboard(PERPENDICULAR, cam, loadTexture(concat(path, "Cloud.bmp")));
     clouds[i]->object->translation = initPoint3df(1000 - (rand()%2000), (rand()%100) + 150, 1000 - (rand()%2000));
     clouds[i]->object->scale = initVector3df(160,80,160);
   }
   
   for(i=0; i<BUILDINGS_AMOUNT; i++)
   {
-    buildings[i] = newObject3d( newModel3d(newMeshCube(loadTexture("outline.bmp")), newMaterial()) );
+    buildings[i] = newObject3d( newModel3d(newMeshCube(loadTexture(concat(path, "outline.bmp"))), newMaterial()) );
     buildings[i]->scale = initVector3df(20, (rand()%90)+10, 20);
     
     buildings[i]->translation.X = ((i%(BUILDINGS_AMOUNT/10))*(buildings[i]->scale.X*2)) - ((BUILDINGS_AMOUNT/20) * 40) + 20;
@@ -85,7 +103,7 @@ void initialize()
   glLightfv(GL_LIGHT0, GL_DIFFUSE, LightDiffuse);
   glEnable(GL_LIGHT0);
   glEnable(GL_LIGHTING);
-};
+}
 
 void updateInput()
 {
@@ -124,7 +142,7 @@ void updateInput()
     cam->rotation.X -= .4f;
   }
   /**/
-};
+}
 
 void update()
 {
@@ -147,7 +165,7 @@ void update()
   //rock->translation.Z += .01f;
   
   rock->rotation = initVector3df(++rock->rotation.X, ++rock->rotation.Y, ++rock->rotation.Z);
-};
+}
 
 void draw()
 {
@@ -182,12 +200,12 @@ void draw()
   glPushMatrix();
   glLightfv(GL_LIGHT0, GL_POSITION, LightPosition);
   glPopMatrix();
-};
+}
 
 void destruction()
 {
   
-};
+}
 
 void reshapeFunction(GLsizei width, GLsizei height)
 {
@@ -203,7 +221,7 @@ void reshapeFunction(GLsizei width, GLsizei height)
   //GLKMatrix4makePerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 1400.0f);
   gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 1400.0f);
   glMatrixMode(GL_MODELVIEW);
-};
+}
 
 void displayFunction()
 {
@@ -213,41 +231,41 @@ void displayFunction()
   draw();
   
   glutSwapBuffers();
-};
+}
 
 void keyboardFunction(unsigned char key, int x, int y)
 {
   keys[key] = TRUE;
-};
+}
 
 void specialKeyboardFuntion(int key, int x, int y)
 {
   keys[key] = TRUE;
-};
+}
 
 void keyboardUpFunction(unsigned char key, int x, int y)
 {
   keys[key] = FALSE;
-};
+}
 
 void specialKeyboardUpFunction(int key, int x, int y)
 {
   keys[key] = FALSE;
-};
+}
 
 void timerFunction(int t)
 {
   update();
   glutPostRedisplay();
   glutTimerFunc(10, timerFunction, 0);
-};
+}
 
 void runApplication()
 {
   glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);
   glutInitWindowSize(800, 600);
   glutInitWindowPosition(100, 100);
-  glutCreateWindow("Trabalho de Computação Gráfica");
+  glutCreateWindow("3d environment");
   glutDisplayFunc(displayFunction);
   glutFullScreen();
   glutReshapeFunc(reshapeFunction);
@@ -259,7 +277,7 @@ void runApplication()
   initialize();
   glutMainLoop();
   destruction();
-};
+}
 
 int main(int argc, char * argv[])
 {

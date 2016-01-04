@@ -20,7 +20,7 @@ Object3d initObject3d(Model3d* model, const Point3df translation, const Vector3d
     object.scale = scale;
     
     return object;
-}
+};
 
 Object3d* newObject3d(Model3d* model)
 {
@@ -28,7 +28,7 @@ Object3d* newObject3d(Model3d* model)
     *object = initObject3d(model, initPoint3df(0,0,0), initVector3df(0,0,0), initVector3df(1,1,1));
     
     return object;
-}
+};
 
 void drawObject3d(const Object3d* object)
 {
@@ -43,7 +43,7 @@ void drawObject3d(const Object3d* object)
     drawModel3d(object->model);
     
     glPopMatrix();
-}
+};
 
 /*
         switch((int)i/4) {

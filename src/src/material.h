@@ -22,7 +22,7 @@ Material initMaterial(const Colorf ambient, const Colorf diffuse, const Colorf s
     m.shininess = shininess;
     
     return m;
-}
+};
 
 Material* newMaterial()
 {
@@ -30,7 +30,7 @@ Material* newMaterial()
     *m = initMaterial(initColorf(.2,.2,.2,1), initColorf(.8,.8,.8,1), initColorf(0,0,0,1), initColorf(0,0,0,1), 0);
     
     return m;
-}
+};
 /*
 Material* newMaterial(const Colorf ambient, const Colorf difusse, const Colorf specular, const Colorf emissive, const GLfloat shininess)
 {

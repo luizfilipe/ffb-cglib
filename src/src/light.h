@@ -20,7 +20,7 @@ Light initLight(const Point3df translation, const Colorf ambient, const Colorf d
     l.specular = specular;
     
     return l;
-}
+};
 
 Light* newLight(const Point3df translation)
 {
@@ -28,6 +28,6 @@ Light* newLight(const Point3df translation)
     *light = initLight(translation, initColorf(1,1,1,1), initColorf(1,1,1,1), initColorf(1,1,1,1));
     
     return light;
-}
+};
 
 #endif

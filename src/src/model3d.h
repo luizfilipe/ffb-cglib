@@ -16,7 +16,7 @@ Model3d initModel3d(Mesh* mesh, Material* material)
     model.material = material;
     
     return model;
-}
+};
 
 Model3d* newModel3d(Mesh* mesh, Material* material)
 {
@@ -24,12 +24,12 @@ Model3d* newModel3d(Mesh* mesh, Material* material)
     *model = initModel3d(mesh, material);
     
     return model;
-}
+};
 
 void drawModel3d(const Model3d* model)
 {
     applyMaterial(model->material);
     drawMesh(model->mesh);
-}
+};
 
 #endif

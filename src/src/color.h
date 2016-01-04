@@ -20,7 +20,7 @@ Colorf initColorf(const GLfloat red, const GLfloat green, const GLfloat blue, co
     color.A = alpha;
 
     return color;
-}
+};
 
 typedef struct
 {
@@ -39,7 +39,7 @@ Colorb initColorb(const GLbyte red, const GLbyte green, const GLbyte blue, const
     color.A = alpha;
 
     return color;
-}
+};
 
 Colorb toColorb(const Colorf color)
 {
@@ -50,7 +50,7 @@ Colorb toColorb(const Colorf color)
     c.A = (GLbyte)(color.A * 255);
 
     return c;
-}
+};
 
 Colorf toColorf(const Colorb color)
 {
@@ -61,7 +61,7 @@ Colorf toColorf(const Colorb color)
     c.A = (GLfloat)color.A / 255;
 
     return c;
-}
+};
 
 GLfloat* toGLColorv(const Colorf color)
 {
@@ -73,6 +73,6 @@ GLfloat* toGLColorv(const Colorf color)
     c[3] = color.A;
 
     return c;
-}
+};
 
 #endif // COLOR_H

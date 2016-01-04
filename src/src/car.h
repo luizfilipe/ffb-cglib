@@ -33,7 +33,7 @@ void accelerateCar(Car* car)
     {
         car->currentSpeed = TOP_SPEED;
     } 
-}
+};
 
 void deccelerateCar(Car* car)
 {
@@ -53,23 +53,23 @@ void breakCar(Car* car)
     }
     
     clamp(&car->currentSpeed, 0, TOP_SPEED);
-}
+};
 
 void steerRightCar(Car* car)
 {
     if(car->currentSpeed > 0)
         car->camera->rotation.Y -= 1;
-}
+};
 
 void steerLeftCar(Car* car)
 {
     if(car->currentSpeed > 0)
         car->camera->rotation.Y += 1;    
-}
+};
 
 void updateCar(Car* car)
 {
     moveFoward(car->camera, car->currentSpeed);
-}
+};
 
 #endif

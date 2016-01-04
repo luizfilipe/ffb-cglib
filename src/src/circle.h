@@ -18,7 +18,7 @@ Circle2d initCircle2d(Point2di center, const GLfloat radius)
     c.Color = initColorf(1,1,1,1);
     
     return c;
-}
+};
 
 void circlePlotPoints(Point2di circCtr, Point2di circPt)
 {
@@ -49,7 +49,7 @@ void circlePlotPoints(Point2di circCtr, Point2di circPt)
     p = initPoint2di(circCtr.X - circPt.Y, circCtr.Y - circPt.X);
 	setPixel(p);
 	glEnd();
-}
+};
 
 void drawCircle2d(const Circle2d* circle)
 {
@@ -81,6 +81,6 @@ void drawCircle2d(const Circle2d* circle)
 
 		circlePlotPoints(center, pAux);
 	}
-}
+};
 
 #endif // CIRCLE_H
