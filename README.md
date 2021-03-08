@@ -6,7 +6,7 @@ in the Computer Science graduation at Brazilian College.
 Acknowledgements to:
 
 Luiz Ricardo ([lrpsantiago](http://github.com/lrpsantiago))  
-Luiz Filipe ([luizfilipe](http://github.com/luizfilipe) or [epicleap](http://github.com/epicleap))  
+Luiz Filipe ([luizfilipe](http://github.com/luizfilipe))  
 Luís Hiluy  
 Mateus Gadelha  
 
