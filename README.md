@@ -14,7 +14,7 @@ Mateus Gadelha
 
 `TODO`
 
-##Documentation
+## Documentation
 
 All documentation will be based on [Doxygen](http://www.stack.nl/~dimitri/doxygen/)
 
